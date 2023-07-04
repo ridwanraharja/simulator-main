@@ -1,46 +1,55 @@
 import { useWizard } from "react-use-wizard";
 
-export default function Step1({ handleChangeStep, handleInputChange }) {
+export default function Step3({ handleChangeStep, handleInputChange }) {
   const { nextStep } = useWizard();
   const handleClick = (data) => {
     handleChangeStep(data);
   };
+
   const handleInput = (e) => {
     handleInputChange(e);
   };
   return (
     <>
-      <div className="tab-pane" role="tabpanel" aria-labelledby="step-1">
-        <h4>1. Possui 65 anos de idade ou mais na data de hoje?</h4>
+      <div
+        id="step-3"
+        className="tab-pane"
+        role="tabpanel"
+        aria-labelledby="step-3"
+      >
+        <h4>
+          3. Você recebe algum benefício do Governo que não seja o bolsa família
+          ou seguro desemprego?
+        </h4>
         <div className="button-wrap">
           <input
             className="hidden yes-button"
-            id="yes-older"
+            id="yes-beneficiary"
             type="radio"
-            name="isOlder"
+            name="isBeneficiary"
             value="1"
             onClick={(e) => {
               nextStep();
-              handleClick(2);
+              handleClick(4);
               handleInput(e);
             }}
           />
-          <label className="button-label" htmlFor="yes-older">
+          <label className="button-label" htmlFor="yes-beneficiary">
             <p>Sim</p>
           </label>
           <input
             className="hidden no-button"
-            id="no-older"
+            id="no-beneficiary"
             type="radio"
-            name="isOlder"
+            name="isBeneficiary"
             value="0"
             onClick={(e) => {
               nextStep();
-              handleClick(2);
+              handleClick(4);
               handleInput(e);
             }}
           />
-          <label className="button-label" htmlFor="no-older">
+          <label className="button-label" htmlFor="no-beneficiary">
             <p>Não</p>
           </label>
         </div>

@@ -3,9 +3,11 @@ import "../../custom.css";
 import SmartWizard from "../SmartWizard";
 export default function Hero() {
   const [active, setActive] = useState(false);
+
   const handleActive = () => {
     setActive(!active);
   };
+
   return (
     <section
       id="hero"
