@@ -6,18 +6,23 @@ export default function Step5({
   handleInputChange,
   handleSubmit,
 }) {
-  const [active, setActive] = useState(false);
   const { nextStep } = useWizard();
+
+  const [active, setActive] = useState(false);
+
   const handleClick = (data) => {
     setActive(!active);
     handleChangeStep(data);
   };
+
   const handleInput = (e) => {
     handleInputChange(e);
   };
+
   const handleResult = () => {
     handleSubmit();
   };
+
   return (
     <>
       <div
@@ -36,7 +41,7 @@ export default function Step5({
             value="1"
             onClick={(e) => {
               nextStep();
-              handleClick(5);
+              handleClick(6);
               handleInput(e);
             }}
           />
@@ -51,7 +56,7 @@ export default function Step5({
             value="0"
             onClick={(e) => {
               nextStep();
-              handleClick(5);
+              handleClick(6);
               handleInput(e);
             }}
           />

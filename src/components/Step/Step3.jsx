@@ -2,6 +2,7 @@ import { useWizard } from "react-use-wizard";
 
 export default function Step3({ handleChangeStep, handleInputChange }) {
   const { nextStep } = useWizard();
+
   const handleClick = (data) => {
     handleChangeStep(data);
   };

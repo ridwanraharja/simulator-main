@@ -2,6 +2,7 @@
 * Custom
 * Copyright 2021, Daniel
 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
 
 /*
 * Smart Wizard
@@ -285,16 +286,16 @@ h2 {
 
 h5,
 h6 {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 h4,
 h3 {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 body {
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 
 .w-80 {
@@ -441,9 +442,9 @@ section#hero {
   font-size: 24px;
   letter-spacing: -0.5px;
   color: #0066b3;
-  color: #004c86;
+  color: #004c86 !important;
   width: 70%;
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 #start-simulator,
@@ -490,7 +491,7 @@ section#hero {
   #main-hero h2 {
     width: 100%;
     font-size: calc(1.325rem + 0.9vw);
-    font-weight: 400;
+    font-weight: 400 !important;
   }
 
   #start-simulator {
@@ -513,7 +514,7 @@ section#hero {
 
   h5,
   .h5 {
-    font-size: 1.1rem;
+    font-size: 1.1rem !important;
   }
 }
 
@@ -579,13 +580,13 @@ section#hero {
 }
 
 .btn-labeled {
-  text-align: start;
-  border-width: 1px;
-  width: 280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 0;
-  padding-bottom: 0;
+  text-align: start !important;
+  border-width: 1px !important;
+  width: 280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .btn-label {
@@ -910,6 +911,13 @@ a.info:before {
   display: none;
 }
 
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 0.5rem 1rem !important;
+  font-size: 1.25rem !important;
+  border-radius: 0.75rem !important;
+}
+
 /*
 * Whatsapp Button
 */
@@ -944,6 +952,7 @@ a.info:before {
 * // X-Small devices (portrait phones, less than 576px)
 *    @media (max-width: 575.98px) { ... }
 */
+
 @media (max-width: 575.98px) {
   #smartwizard {
     padding: 10px 8px;
@@ -956,7 +965,7 @@ a.info:before {
 
   h4,
   .h4 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 
   #results ul {

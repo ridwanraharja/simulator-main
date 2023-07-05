@@ -1,11 +1,13 @@
+// Image
 import successImage from "../../assets/success.svg";
 import dangerImage from "../../assets/danger.svg";
+
+// Utils
 import { buildUriWhatsapp } from "../../utils/resultado";
 
 export default function Content({ data }) {
-  console.log(data);
   let wa = buildUriWhatsapp(data.title, "5521995549567");
-  console.log(wa);
+
   return (
     <section id="results" className="d-flex justify-content-center">
       <div className="container position-relative">
@@ -44,7 +46,7 @@ export default function Content({ data }) {
                   <h4 className="text-danger">{data.title}</h4>
                 </div>
                 <h5 className="pb-2">
-                  <b>DICAS: </b>
+                  <b>MOTIVOS: </b>
                   {data.description}
                 </h5>
               </>
@@ -54,7 +56,7 @@ export default function Content({ data }) {
               <h3> Dados analisados</h3>
               <ul className="list-unstyled my-4 mx-auto ">
                 <li>
-                  Possui 65 anos ou mais na data de hoje:
+                  Possui 65 anos ou mais na data de hoje:{" "}
                   <b>{data.isOlder == 1 ? "SIM" : "NÃO"}</b>
                 </li>
                 <li>
@@ -84,19 +86,32 @@ export default function Content({ data }) {
                     })}
                   </b>
                 </li>
-                {/* <?php if ($isDisabled) : ?>
-              <li>Valor gasto com medicamentos ou outros itens necessários por conta da deficiência: <b>R$<?php echo number_format($spentMedicine, 2, ',', ''); ?></b>
-              </li>
-            <?php endif; ?> */}
+                {data.isDisabled ? (
+                  <li>
+                    Valor gasto com medicamentos ou outros itens necessários por
+                    conta da deficiência:{" "}
+                    <b>
+                      R$
+                      {data.spentMedicine.toLocaleString("pt-BR", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
+                    </b>
+                  </li>
+                ) : (
+                  ""
+                )}
                 <li>
                   Renda familiar per capita:{" "}
                   <b>
                     {" "}
                     R$
-                    {data.perCapitaIncome.toLocaleString("pt-BR", {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
+                    {Number.isNaN(data.perCapitaIncome)
+                      ? "0,00"
+                      : data.perCapitaIncome.toLocaleString("pt-BR", {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        })}
                   </b>
                 </li>
               </ul>

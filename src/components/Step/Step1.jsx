@@ -2,12 +2,15 @@ import { useWizard } from "react-use-wizard";
 
 export default function Step1({ handleChangeStep, handleInputChange }) {
   const { nextStep } = useWizard();
+
   const handleClick = (data) => {
     handleChangeStep(data);
   };
+
   const handleInput = (e) => {
     handleInputChange(e);
   };
+
   return (
     <>
       <div className="tab-pane" role="tabpanel" aria-labelledby="step-1">

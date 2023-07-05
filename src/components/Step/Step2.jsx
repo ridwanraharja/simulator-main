@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useWizard } from "react-use-wizard";
 
 export default function Step2({ handleChangeStep, handleInputChange }) {
-  const [active, setActive] = useState(false);
   const { nextStep } = useWizard();
+  const [active, setActive] = useState(false);
+
   const handleClick = (data) => {
     setActive(!active);
     handleChangeStep(data);

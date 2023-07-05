@@ -1,9 +1,9 @@
-// Component
-import Home from "./Pages/Home";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Contacto from "./Pages/Contacto";
+
+// Pages
+import Home from "./Pages/Home";
 import Resultado from "./Pages/Resultado";
+import Contacto from "./Pages/Contacto";
 
 function App() {
   return (

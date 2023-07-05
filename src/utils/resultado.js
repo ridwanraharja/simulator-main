@@ -27,6 +27,7 @@ export const resultado = (formData) => {
 
   let negativeTitle =
     "Infelizmente parece que você não tem direito ao benefício da LOAS nesse momento. Os seguinte pontos te impedem (podendo existir outros):";
+
   if (
     !isDisabled &&
     isOlder &&
@@ -44,6 +45,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -70,6 +72,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -95,6 +98,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -120,6 +124,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -147,6 +152,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -174,6 +180,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -200,6 +207,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -226,6 +234,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -245,6 +254,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -265,6 +275,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,
@@ -290,6 +301,7 @@ export const resultado = (formData) => {
       isOlder: isOlder,
       isDisabled: isDisabled,
       isBeneficiary: isBeneficiary,
+      incomes: incomes,
       isCadiunicoOrCras: isCadiunicoOrCras,
       qtdMembers: qtdMembers,
       sumIncomes: sumIncomes,

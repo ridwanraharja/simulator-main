@@ -1,6 +1,8 @@
 import { useState } from "react";
-import "../../custom.css";
+
+//Components
 import SmartWizard from "../SmartWizard";
+
 export default function Hero() {
   const [active, setActive] = useState(false);
 

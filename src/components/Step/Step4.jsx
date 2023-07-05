@@ -2,17 +2,18 @@ import { useState } from "react";
 import { useWizard } from "react-use-wizard";
 
 export default function Step4({ handleChangeStep, handleInputChange }) {
-  const [countInput, setCountInput] = useState(1);
-  const [tableData, setTableData] = useState([
-    // ... your initial data here ...
-  ]);
   const { nextStep } = useWizard();
+  const [countInput, setCountInput] = useState(1);
+  const [tableData, setTableData] = useState([]);
+
   const handleClick = (data) => {
     handleChangeStep(data);
   };
+
   const incrementInput = () => {
     setCountInput(countInput + 1);
   };
+
   const decrementInput = () => {
     if (countInput == 1) {
       return;
@@ -34,6 +35,7 @@ export default function Step4({ handleChangeStep, handleInputChange }) {
   const handleInput = (e) => {
     handleInputChange(e);
   };
+
   return (
     <>
       <div
