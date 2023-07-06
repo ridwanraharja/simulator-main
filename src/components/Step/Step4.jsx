@@ -8,16 +8,17 @@ export default function Step4({
 }) {
   const { nextStep } = useWizard();
   const [countInput, setCountInput] = useState(1);
+  const [input, setInput] = useState("");
   const [tableData, setTableData] = useState([]);
+  const [inputs, setInputs] = useState([]);
 
   const handleClick = (data) => {
     handleChangeStep(data);
   };
 
-  const [input, setInput] = useState("");
   const handleInput = (e) => {
     const value = e.target.value;
-    const regex = /^[0-9.]*$/; // Ekspresi reguler untuk angka dan titik
+    const regex = /^[0-9.]*$/; // input just for number and .
     if (regex.test(value)) {
       setInput(value);
     }
@@ -47,17 +48,15 @@ export default function Step4({
     }
   };
 
-  const [inputs, setInputs] = useState([]);
-
   const handleChange = (e, index) => {
     const newInputs = [...inputs];
     const value = e.target.value;
-    const regex = /^[0-9.]*$/; // Ekspresi reguler untuk angka dan titik
+    const regex = /^[0-9.]*$/; // input just for number and .
     if (regex.test(value)) {
       newInputs[index] = value;
       setInputs(newInputs);
     }
-    multipleInputStep4(newInputs); // Panggil fungsi callback dan kirimkan data
+    multipleInputStep4(newInputs);
   };
 
   return (
@@ -193,7 +192,7 @@ export default function Step4({
                       name="itemMembro"
                       className="form-select"
                       required
-                      onChange={(e) => handleInput(e)}
+                      onChange={(e) => handleInputChange(e)}
                     >
                       <option disabled selected value="">
                         Selecione um
