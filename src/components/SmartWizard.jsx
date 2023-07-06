@@ -34,7 +34,7 @@ export default function SmartWizard() {
     if (e.target.name == "incomes" || e.target.name == "itemMembro") {
       return setFormData((prevState) => ({
         ...prevState,
-        [e.target.name]: [...prevState[e.target.name], e.target.value],
+        [e.target.name]: [e.target.value],
       }));
     }
 
@@ -49,6 +49,17 @@ export default function SmartWizard() {
     navigate("/resultado", { state: { data: result } });
   };
 
+  const multipleInputStep4 = (data) => {
+    if ((formData.incomes.length = 1)) {
+      return setFormData({
+        ...formData,
+        incomes: [...formData.incomes, ...data],
+      });
+    }
+    setFormData({ ...formData, incomes: [...formData.incomes[0], ...data] });
+  };
+
+  console.log(formData);
   return (
     <div id="smartwizard" className="sw sw-theme-dots sw-justified">
       <div className="title">
@@ -132,6 +143,7 @@ export default function SmartWizard() {
         <Step4
           handleChangeStep={handleChangeStep}
           handleInputChange={handleInputChange}
+          multipleInputStep4={multipleInputStep4}
         />
         <Step5
           handleChangeStep={handleChangeStep}

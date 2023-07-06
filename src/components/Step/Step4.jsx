@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useWizard } from "react-use-wizard";
 
-export default function Step4({ handleChangeStep, handleInputChange }) {
+export default function Step4({
+  handleChangeStep,
+  handleInputChange,
+  multipleInputStep4,
+}) {
   const { nextStep } = useWizard();
   const [countInput, setCountInput] = useState(1);
   const [tableData, setTableData] = useState([]);
@@ -10,6 +14,17 @@ export default function Step4({ handleChangeStep, handleInputChange }) {
     handleChangeStep(data);
   };
 
+  const [input, setInput] = useState("");
+  const handleInput = (e) => {
+    const value = e.target.value;
+    const regex = /^[0-9.]*$/; // Ekspresi reguler untuk angka dan titik
+    if (regex.test(value)) {
+      setInput(value);
+    }
+    handleInputChange(e);
+  };
+
+  //Function for Table
   const incrementInput = () => {
     setCountInput(countInput + 1);
   };
@@ -32,8 +47,17 @@ export default function Step4({ handleChangeStep, handleInputChange }) {
     }
   };
 
-  const handleInput = (e) => {
-    handleInputChange(e);
+  const [inputs, setInputs] = useState([]);
+
+  const handleChange = (e, index) => {
+    const newInputs = [...inputs];
+    const value = e.target.value;
+    const regex = /^[0-9.]*$/; // Ekspresi reguler untuk angka dan titik
+    if (regex.test(value)) {
+      newInputs[index] = value;
+      setInputs(newInputs);
+    }
+    multipleInputStep4(newInputs); // Panggil fungsi callback dan kirimkan data
   };
 
   return (
@@ -152,16 +176,17 @@ export default function Step4({ handleChangeStep, handleInputChange }) {
                   <div className="input-group">
                     <span className="input-group-text">R$</span>
                     <input
-                      type="text"
                       className="form-control money"
-                      placeholder="0,00"
+                      type="text"
+                      placeholder="0.00"
+                      value={input}
                       name="incomes"
-                      onChange={(e) => handleInput(e)}
+                      onChange={(event) => handleInput(event)}
                     />
                   </div>
                 </td>
               </tr>
-              {tableData.map((row) => (
+              {tableData.map((row, index) => (
                 <tr className="txtMult" key={row.id}>
                   <td>
                     <select
@@ -188,11 +213,13 @@ export default function Step4({ handleChangeStep, handleInputChange }) {
                     <div className="input-group">
                       <span className="input-group-text">R$</span>
                       <input
-                        type="text"
                         className="form-control money"
-                        placeholder="0,00"
+                        key={index}
+                        value={inputs[index]}
+                        type="text"
+                        placeholder="0.00"
                         name="incomes"
-                        onChange={(e) => handleInput(e)}
+                        onChange={(event) => handleChange(event, index)}
                       />
                     </div>
                   </td>

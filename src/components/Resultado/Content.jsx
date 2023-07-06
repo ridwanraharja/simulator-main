@@ -183,8 +183,8 @@ export default function Content({ data }) {
                 href="https://www.facebook.com/sharer/sharer.php?u=https://meubeneficioloas.com.br"
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-primary btn-labeled"
-                style={{ backgroundColor: "#0d6efd", borderColor: "#0d6efd" }}
+                className="btn btn-primary btn-labeled facebook"
+                style={{ backgroundColor: "#0d6efd !", borderColor: "#0d6efd" }}
                 type="button"
               >
                 <span className="btn-label">

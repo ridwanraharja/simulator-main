@@ -3,6 +3,7 @@ import { useWizard } from "react-use-wizard";
 
 export default function Step2({ handleChangeStep, handleInputChange }) {
   const { nextStep } = useWizard();
+  const [input, setInput] = useState("");
   const [active, setActive] = useState(false);
 
   const handleClick = (data) => {
@@ -11,6 +12,14 @@ export default function Step2({ handleChangeStep, handleInputChange }) {
   };
 
   const handleInput = (e) => {
+    if (e.target.name == "isDisabled") {
+      return handleInputChange(e);
+    }
+    const value = e.target.value;
+    const regex = /^[0-9.]*$/; // input just for number and .
+    if (regex.test(value)) {
+      setInput(value);
+    }
     handleInputChange(e);
   };
 
@@ -68,7 +77,8 @@ export default function Step2({ handleChangeStep, handleInputChange }) {
             <input
               type="text"
               className="form-control money"
-              placeholder="0,00"
+              placeholder="0.00"
+              value={input}
               name="spentMedicine"
               onChange={(e) => {
                 handleInput(e);

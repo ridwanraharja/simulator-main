@@ -1,11 +1,17 @@
 export const resultado = (formData) => {
+  //variable data for result
   let isOlder = parseInt(formData.isOlder, 10);
   let isDisabled = parseInt(formData.isDisabled, 10);
   let isBeneficiary = parseInt(formData.isBeneficiary, 10);
   let isCadiunicoOrCras = parseInt(formData.isCadiunicoOrCras, 10);
   let spentMedicine = parseInt(formData.spentMedicine, 10);
   let incomes = formData.incomes.map((str) => parseInt(str, 10));
-  let qtdMembers = 1 + incomes.length;
+  let qtdMembers;
+  if (incomes.length == []) {
+    qtdMembers = 1;
+  } else {
+    qtdMembers = incomes.length;
+  }
   let sumIncomes = incomes.reduce(
     (accumulator, currentValue) => accumulator + currentValue,
     0
@@ -18,16 +24,14 @@ export const resultado = (formData) => {
     0
   );
   let minimumSalary = 1100;
-
   let fourthPart = minimumSalary / 4;
   let halfPart = minimumSalary / 2;
-
   let positiveTitle =
     "Você tem grandes chances de conseguir o benefício sem precisar de ação judicial. Junte os documentos e faça o requerimento do benefício junto ao INSS.";
-
   let negativeTitle =
     "Infelizmente parece que você não tem direito ao benefício da LOAS nesse momento. Os seguinte pontos te impedem (podendo existir outros):";
 
+  //result
   if (
     !isDisabled &&
     isOlder &&
@@ -311,6 +315,7 @@ export const resultado = (formData) => {
   }
 };
 
+// link WA Builder
 export const buildUriWhatsapp = (title, tel) => {
   let nl = "%0A"; //new line
   let link = `https://wa.me/${tel}?text=`; //Link Whatsapp Share
